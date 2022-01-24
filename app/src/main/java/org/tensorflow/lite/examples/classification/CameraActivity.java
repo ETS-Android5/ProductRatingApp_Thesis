@@ -189,16 +189,16 @@ public abstract class CameraActivity extends AppCompatActivity
 
     FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
     uID = currentFirebaseUser.getUid();
-    databaseReference = getInstance().getReference("Recommendation").child(uID).child("rProducts");
+    //databaseReference = getInstance().getReference("Recommendation").child(uID).child("rProducts");
     dRef = getInstance().getReference("Products");
     fetchProductData();
 
-    dialogBtn.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        showDialog(CameraActivity.this);
-      }
-    });
+//    dialogBtn.setOnClickListener(new View.OnClickListener() {
+//      @Override
+//      public void onClick(View v) {
+//        showDialog(CameraActivity.this);
+//      }
+//    });
 
 
     displayRatingsButton.setOnClickListener(new View.OnClickListener() {
