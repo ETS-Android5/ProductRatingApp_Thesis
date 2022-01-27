@@ -49,18 +49,17 @@ automatically by download.gradle.
 
 ### Step 1. Clone the TensorFlow examples source code
 
-Clone the TensorFlow examples GitHub repository to your computer to get the demo
-application.
+Clone the project from this repo.
 
 ```
-git clone https://github.com/tensorflow/examples
+
 ```
 
 Open the TensorFlow source code in Android Studio. To do this, open Android
 Studio and select `Open an existing project`, setting the folder to
 `examples/lite/examples/image_classification/android`
 
-<img src="images/classifydemo_img1.png?raw=true" />
+
 
 ### Step 2. Build the Android Studio project
 
@@ -87,11 +86,7 @@ that creates the custom inference pipleline using the
 The [`build.gradle`](app/build.gradle) inside `app` folder shows how to change
 `flavorDimensions "tfliteInference"` to switch between the two solutions.
 
-Inside **Android Studio**, you can change the build variant to whichever one you
-want to build and run—just go to `Build > Select Build Variant` and select one
-from the drop-down menu. See
-[configure product flavors in Android Studio](https://developer.android.com/studio/build/build-variants#product-flavors)
-for more details.
+Inside **Android Studio**, you have to change the build variant to supporDebug and run—just go to `Build > Select Build Variant` and select supportDebug. 
 
 For gradle CLI, running `./gradlew build` can create APKs under
 `app/build/outputs/apk` for both solutions.
@@ -104,16 +99,7 @@ inputs and outputs by using `lib_support`.*
 The file `download.gradle` directs gradle to download the two models used in the
 example, placing them into `assets`.
 
-<img src="images/classifydemo_img4.png?raw=true" style="width: 40%" />
 
-<img src="images/classifydemo_img2.png?raw=true" style="width: 60%" />
-
-<aside class="note"><b>Note:</b><p>`build.gradle` is configured to use
-TensorFlow Lite's nightly build.</p><p>If you see a build error related to
-compatibility with Tensorflow Lite's Java API (for example, `method X is
-undefined for type Interpreter`), there has likely been a backwards compatible
-change to the API. You will need to run `git pull` in the examples repo to
-obtain a version that is compatible with the nightly build.</p></aside>
 
 ### Step 3. Install and run the app
 
